@@ -19,7 +19,6 @@ console.log(x + y);
 
 /* 아래 코드에서 실행컨텍스트 스택의 흐름은? */
 const stackVariableX = 1;
-
 function executionContextFunction() {
   const stackVariableY = 2;
 
@@ -29,13 +28,11 @@ function executionContextFunction() {
   }
   innerFunction();
 }
-
 executionContextFunction(); //6
 
 /* 실행 컨텍스트의 생성과 식별자 검색과정 */
 var exeX = 1;
 const exeY = 2;
-
 function exeFunction(a) {
   var exeX = 3;
   const exeY = 4;
@@ -46,5 +43,12 @@ function exeFunction(a) {
   }
   innerFunction(10);
 }
-
 exeFunction(20);
+
+/* 23.7 실행 컨텍스트와 블록 레벨 스코프 */
+let blockScopeX = 1;
+if (true) {
+  let blockScopeX = 10;
+  console.log(blockScopeX); // 10
+}
+console.log(blockScopeX); // 1
