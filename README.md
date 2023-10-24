@@ -1,8 +1,14 @@
 # 📚 모던 자바스크립트 Deep Dive
 
 <br />
+<br />
 
-![Alt text](./assets/book-thumbnail.png)
+ <div style="display: flex; justify-content: center; align-items: center;">
+        <img src="./assets/book-thumbnail.png" style="width: 400px; height: 400px;">
+</div>
+
+<br />
+<br />
 
 ## 🐒 [모던자바스크립트](https://www.yes24.com/Product/Goods/92742567) 도서 내 코드로직들을 직접 실제 브라우저에서 학습하고, 저장하는 저장소
 
