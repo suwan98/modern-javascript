@@ -3,9 +3,9 @@
 <br />
 <br />
 
- <div style="display: flex; justify-content: center; align-items: center;">
-        <img src="./assets/book-thumbnail.png" style="width: 400px; height: 400px;">
-</div>
+<p align="center">
+<img src="./assets/book-thumbnail.png" style="width:400px; height:400px;" />
+</p>
 
 <br />
 <br />
