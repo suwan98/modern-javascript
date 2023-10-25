@@ -3,6 +3,8 @@
 <br />
 <br />
 
+## 🐒 [모던자바스크립트](https://www.yes24.com/Product/Goods/92742567) 도서 내 코드로직들을 직접 실제 브라우저에서 학습하고, 기록하는 저장소
+
 <p align="center">
 <img src="./assets/book-thumbnail.png" style="width:400px; height:400px;" />
 </p>
@@ -10,10 +12,9 @@
 <br />
 <br />
 
-## 🐒 [모던자바스크립트](https://www.yes24.com/Product/Goods/92742567) 도서 내 코드로직들을 직접 실제 브라우저에서 학습하고, 저장하는 저장소
+**[결국 자바스크립트를 알아보기로 했다](https://www.**youtube**.com/watch?v=HoqMPUkzMSA&t=524s)**
 
-- [결국 자바스크립트를 알아보기로 했다](https://www.**youtube**.com/watch?v=HoqMPUkzMSA&t=524s)
-  - 해당 영상에 영감을 받고 `"모던 자바스크립트 DeepDive"`를 기록하며 완독을 목표로 하고 있습니다
+- 해당 영상에 영감을 받고 `"모던 자바스크립트 DeepDive"`를 기록하며 완독을 목표로 하고 있습니다
 
 <br />
 
@@ -47,7 +48,6 @@
 - [22장 : this](./src/21_built-in-object.js)
 - [23장 : 실행 컨텍스트](./src/23_execution_context.js)
 - [24장 : 클로저](./src/24_closure.js)
-  - 📝 중요개념이므로 `docs` 추가 : [클로저](./src/docs/24_closure.md)
 - [25장 : 클래스]
 - [26장 : ES6 함수의 추가 기능]
 - [27장 : 배열]
@@ -74,6 +74,16 @@
 - [48장 : 모듈]
 - [49장 : Bable과 Webpack을 이용한 ES6+/ES.NEXT 개발 환경 구축]
 
+<br />
+<br />
+
+## 💯 주요 개념 정리 문서
+
+**정리가 필요한 중요한 장들은 따로 문서를 정리해 기술**
+
+- `모던자바스크립트 DeepDive 24장` : [ 클로저](./src/docs/24_closure.md)
+
+<br />
 <br />
 
 ## 🛤️ 진행상황
