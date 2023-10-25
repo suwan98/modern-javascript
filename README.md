@@ -12,7 +12,7 @@
 
 ## 🐒 [모던자바스크립트](https://www.yes24.com/Product/Goods/92742567) 도서 내 코드로직들을 직접 실제 브라우저에서 학습하고, 저장하는 저장소
 
-- [결국 자바스크립트를 알아보기로 했다](https://www.youtube.com/watch?v=HoqMPUkzMSA&t=524s)
+- [결국 자바스크립트를 알아보기로 했다](https://www.**youtube**.com/watch?v=HoqMPUkzMSA&t=524s)
   - 해당 영상에 영감을 받고 `"모던 자바스크립트 DeepDive"`를 기록하며 완독을 목표로 하고 있습니다
 
 <br />
@@ -46,7 +46,8 @@
 - [21장 : 빌트인 객체](./src/21_built-in-object.js)
 - [22장 : this](./src/21_built-in-object.js)
 - [23장 : 실행 컨텍스트](./src/23_execution_context.js)
-- [24장 : 클로저]
+- [24장 : 클로저](./src/24_closure.js)
+  - 📝 중요개념이므로 `docs` 추가 : [클로저](./src/docs/24_closure.md)
 - [25장 : 클래스]
 - [26장 : ES6 함수의 추가 기능]
 - [27장 : 배열]
@@ -104,7 +105,7 @@
 | [21장: 내장 객체](./src/21_built-in-object.js)                    | 2023-10-20 (금) 학습 ✅ |
 | [22장: this](./src/21_built-in-object.js)                         | 2023-10-23 (월) 학습 ✅ |
 | [23장: 실행 컨텍스트](./src/23_execution_context.js)              | 2023-10-24 (화) 학습 ✅ |
-| [24장: 클로저]                                                    | 아직 시작하지 않음      |
+| [24장: 클로저](./src/24_closure.js)                               | 2023-10-25 (수) 학습 ✅ |
 | [25장: 클래스]                                                    | 아직 시작하지 않음      |
 | [26장: ES6 함수의 추가 기능]                                      | 아직 시작하지 않음      |
 | [27장: 배열]                                                      | 아직 시작하지 않음      |
