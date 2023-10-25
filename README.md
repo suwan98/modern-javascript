@@ -1,12 +1,14 @@
 # 📚 모던 자바스크립트 Deep Dive
 
 <br />
-<br />
 
 ## 🐒 [모던자바스크립트](https://www.yes24.com/Product/Goods/92742567) 도서 내 코드로직들을 직접 실제 브라우저에서 학습하고, 기록하는 저장소
 
+<br />
+<br />
+
 <p align="center">
-<img src="./assets/book-thumbnail.png" style="width:400px; height:400px;" />
+<img src="./assets/book-thumbnail.png" style="width:400px; height:600px;" />
 </p>
 
 <br />
