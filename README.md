@@ -14,7 +14,7 @@
 <br />
 <br />
 
-**[결국 자바스크립트를 알아보기로 했다](https://www.**youtube**.com/watch?v=HoqMPUkzMSA&t=524s)**
+**[결국 자바스크립트를 알아보기로 했다](https://forward.nhn.com/2021/sessions/17)**
 
 - 해당 영상에 영감을 받고 `"모던 자바스크립트 DeepDive"`를 기록하며 완독을 목표로 하고 있습니다
 
