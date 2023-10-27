@@ -8,7 +8,7 @@
 <br />
 
 <p align="center">
-<img src="./assets/book-thumbnail.png" style="width:400px; height:600px;" />
+    <img src="./assets/book-thumbnail.png" style="width:400px; height:600px;" />
 </p>
 
 <br />
@@ -52,7 +52,7 @@
 - [24장 : 클로저](./src/24_closure.js)
 - [25장 : 클래스]
 - [26장 : ES6 함수의 추가 기능](./src/26_ES6_add_on.js)
-- [27장 : 배열]
+- [27장 : 배열](./src/27_array.js)
 - [28장 : Number]
 - [29장 : Math]
 - [30장 : Date]
@@ -119,8 +119,8 @@
 | [23장: 실행 컨텍스트](./src/23_execution_context.js)              | 2023-10-24 (화) 학습 ✅ |
 | [24장: 클로저](./src/24_closure.js)                               | 2023-10-25 (수) 학습 ✅ |
 | [25장: 클래스]                                                    | 아직 시작하지 않음      |
-| [26장: ES6 함수의 추가 기능](./src/26_ES6_add_on.js)              | 2023-10-25 (수) 학습 ✅ |
-| [27장: 배열]                                                      | 아직 시작하지 않음      |
+| [26장: ES6 함수의 추가 기능](./src/26_ES6_add_on.js)              | 2023-10-26 (목) 학습 ✅ |
+| [27장: 배열](./src/27_array.js)                                   | 2023-10-27 (금) 학습 ✅ |
 | [28장: 숫자]                                                      | 아직 시작하지 않음      |
 | [29장: 수학]                                                      | 아직 시작하지 않음      |
 | [30장: 날짜]                                                      | 아직 시작하지 않음      |
