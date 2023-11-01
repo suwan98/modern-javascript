@@ -84,3 +84,44 @@ console.log(trimString.trim()); // '꺼억'
 const 문자열반복 = "반복하자";
 console.log(문자열반복.repeat(2)); // '반복하자반복하자'
 console.log(문자열반복.repeat()); // ''
+
+/* String.prototype.replace */
+const replaceString = "안녕 세주야";
+/* 세주 -> 수완으로 교체 */
+console.log(replaceString.replace("세주", "수완")); // '안녕 수완아'
+/* 검색된 문자열이 여러개 존재할경우는? */
+const duplicateString = "안녕 안녕 안녕 안녕안녕안녕";
+console.log(duplicateString.replace("안녕", "과연?")); // '과연? 안녕 안녕 안녕안녕안녕'
+/* replace 메서드 첫번째 인수로 정규표현식 전달 */
+const targetString = new String("Hello Hello");
+console.log(targetString.replace(/Hello/g, "seju")); // 'seju seju'
+/* replace 메서드 두번째 인수엔 치환함수를 전달할수도 있다 */
+function camelToSnake(camel) {
+  return camel.replace(/.[A-Z]/g, (match) => {
+    return match[0] + "_" + match[1].toLowerCase();
+  });
+}
+const camelString = "helloWorld";
+const result = camelToSnake(camelString);
+console.log(result); // 'hello_world'
+
+/* String.prototype.split */
+const splitString = "문자를 쪼개 배열로 만들어보자";
+
+/* 인수로 빈문자열 전달 시 각 문자를 모두 분리한 배열을 반환 */
+//['문', '자', '를', ' ', '쪼', '개', ' ', '배', '열', '로', ' ', '만', '들', '어', '보', '자']
+console.log(splitString.split(""));
+/* 인수를 생략하면 문자열 전체를 단일요소로하는 배열을 반환 */
+//['문자를 쪼개 배열로 만들어보자']
+console.log(splitString.split());
+
+/* 공백으로 구분한 배열을 반환 */
+//['문자를', '쪼개', '배열로', '만들어보자']
+console.log(splitString.split(" "));
+
+/* 인수로 전달받은 문자열을 역순으로 뒤집는다 */
+function reverseString(str) {
+  return str.split("").reverse().join("");
+}
+const reverseResult = reverseString("수완아");
+console.log(reverseResult);
