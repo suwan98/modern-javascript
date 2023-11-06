@@ -8,7 +8,7 @@
 <br />
 
 <p align="center">
-    <img src="./assets/book-thumbnail.png" style="width:400px; height:600px;" />
+    <img src="./assets/book-thumbnail.png" style="width:400px; height:450px;" />
 </p>
 
 <br />
@@ -63,7 +63,7 @@
 - [35장 : 스프레드 문법](./src/35_spread_syntax.js)
 - [36장 : 디스트럭처링 할당](./src/36_destructuring.js)
 - [37장 : Set과 Map]
-- [38장 : 브라우저 렌더링 과정]
+- [38장 : 브라우저 렌더링 과정](./src/38_browser_rendering.js)
 - [39장 : DOM]
 - [40장 : 이벤트]
 - [41장 : 타이머]
@@ -86,6 +86,7 @@
 - `모던자바스크립트 DeepDive 24장` : [클로저](./src/docs/24_closure.md)
 - `모던자바스크립트 DeppDive 35장` : [스프레드 문법](./src/docs/35_spread_syntax.md)
 - `모던자바스크립트 DeppDive 36장` : [구조분해할당](./src/docs/36_destructuring.md)
+- `모던자바스크립트 DeppDive 38장` : [브라우저의 렌더링 과정](./src/docs/38_browser_rendering.md)
 
 <br />
 <br />
@@ -133,7 +134,7 @@
 | [35장: 스프레드 문법](./src/35_spread_syntax.js)                  | 2023-11-02 (목) 학습 ✅ |
 | [36장: 디스트럭처링 할당](./src/36_destructuring.js)              | 2023-11-03 (금) 학습 ✅ |
 | [37장: Set 및 Map]                                                | 아직 시작하지 않음      |
-| [38장: 브라우저 렌더링 프로세스]                                  | 아직 시작하지 않음      |
+| [38장: 브라우저 렌더링 프로세스](./src/38_browser_rendering.js)   | 2023-11-06 (월) 학습 ✅ |
 | [39장: DOM]                                                       | 아직 시작하지 않음      |
 | [40장: 이벤트]                                                    | 아직 시작하지 않음      |
 | [41장: 타이머]                                                    | 아직 시작하지 않음      |
