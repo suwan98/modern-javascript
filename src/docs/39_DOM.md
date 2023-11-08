@@ -268,3 +268,449 @@ console.log(apple.matches("#fruits > li.apple")); // true
 
 - `NodeList`는 `HTMLCollection`에 비해 비교적 안전하나 이또한 경우에따라 live 객체로 동작할 수 있음
 - 따라서 전개연산자를 통해 배열로 변환시키거나 `Array.from`를 통해 배열로 변환시키는게 필요하다
+
+## 노드 탐색
+
+**노드 탐색**
+
+- 요소 노드 취득 후 취득한 요소를 기점으로 DOM 트리의 노드를 옮기며 부모,형제,자식 노드등을 탐색할 수 있다
+- DOM트리 상의 노드를 탐색할 수 있도록 자바스크립트 엔진은 Node,Element 트리 탐색 프로퍼티를 제공한다
+
+**node**
+
+- parentNode
+- previousSibling
+- firstChild
+- childNodes
+
+**elemnt**
+
+- previousElementSibling
+- nextElementSibling
+
+**노드 탐색프로퍼티는 모두 접근자 프로퍼티이다**
+
+- 단, 노드 탐색 프로퍼티는 setter 없이 getter만 존재하여 참조만 가능한 읽기전용 접근자프로퍼티
+
+### 공백 텍스트 노드
+
+**HTML 요소 사이 스페이스, 탭 , 개행등의 공백문자또한 텍스트 노드를 생성**
+
+- 이를 공백텍스트 노드라 한다
+
+### 자식 노드 탐색
+
+**자식노드 탐색을하기 위해선, 다음과 같은 노드 탐색 프로퍼티를 사용**
+
+| 프로퍼티                                                                | 설명                                                               |
+| ----------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| Node.prototype.childNodes                                               | 자식 노드를 모두 탐색해 NodeList에 담아 반환                       |
+| NodeList엔 요소노드 뿐만아니라 텍스트 노드도 포함될 수 있다             |
+| Node.prototype.children                                                 | 자식 노드중에서 요소 노드만 모두 탐색해 HTMLCollection에 담아 반환 |
+| children 프로퍼티가 반환한 HTMLCollection에는 텍스트 노드가 포함되지 ❌ |
+| Node.prototype.firstChild                                               | 첫번째 자식노드를 반환                                             |
+| 반환한 자식노드는 텍스트노드이거나 요소노드일 수 있다                   |
+| Node.prototype.lastChild                                                | 마지막 자식노드를 반환                                             |
+| 반환한 자식노드는 텍스트노드이거나 요소노드일 수 있다                   |
+| Element.prototype.firstElementChild                                     | 첫번째 자식 요소 노드를 반환                                       |
+| Element.prototype.lastElementChild                                      | 마지막 자식 요소 노드를 반환                                       |
+
+### 자식 노드 존재 확인
+
+**Node.prototype.hasChildNodes**
+
+- 자식 노드가 존재하는지 확인
+- 불리언으로 반환
+  - 텍스트 노드를 포함해 자식노드의 존재를 확인
+  - 텍스트노드를 제외해서 확인하려면 `children.length` 혹은 `childElementCount` 사용
+
+```tsx
+<ul id="friuts">f</ul>
+
+<!-- script -->
+const fruits = document.getElementById("friuts");
+
+fruits.hasChildNodes() //true
+
+```
+
+### 요소 노드의 텍스트 노드 탐색
+
+**firstChild 프로퍼티**
+
+- 요소노드의 텍스트노드는 요소노드의 자식노드
+  - 따라서 요소노드의 텍스트노드는 firstChild 프로퍼티로 접근 가능
+  - 첫번째 자식노드를 반환
+  - 프로퍼티가 반환한 노드는 텍스트노드이거나 요소노드이다
+
+```tsx
+<div id="foo">Hi</div> 
+  /* script */
+
+  docuemnt.getElementById("foo").firstChild; // Hi
+```
+
+### 부모 노드 탐색
+
+**Node.prototype.parentNode**
+
+- 텍스트 노드는 DOM 트리 마지막 리프노드이므로 부모노가 텍스트 노드인경우는 ❌
+
+```tsx
+<ul class="numbers">
+  <li class="apple"></li>
+</ul>;
+
+/* script */
+const apple =
+  document.querySelector(".apple") 
+  /* li클래스의 부모노드는 ul이다*/
+  apple.parentNode; // ul number
+```
+
+### 형제노드 탐색
+
+**부모노드가 같은 형제노드 탐색시 아래 표와 같은 프로퍼티를 사용**
+
+- 단, 어트리뷰트 노드는 요소노드와 연결되어있지만 부모노드가 같은 형제노드가 아니므로 반환 ❌
+  - 즉, 텍스트노드 및 요소노드만 반환
+
+| 프로퍼티                             | 설명                             |
+| ------------------------------------ | -------------------------------- |
+| previousSibling                      | 부모노드가 같은 형제 노드 중에서 |
+| 자신의 이전 형제 노드를 탐색 후 반환 |
+| nextSibling                          | 부모노드가 같은 형제 노드 중에서 |
+| 자신의 다음 형제노드를 탐색 후 반환  |
+| previousElementsSibling              | 부모노드가 같은 형제 노드 중에서 |
+
+자신의 이전 형제 노드를 탐색 후 반환
+(요소노드만 반환) |
+| nextElementsSibling | 부모노드가 같은 형제 노드 중에서
+자신의 다음 형제 노드를 탐색 후 반환
+(요소노드만 반환) |
+
+## 노드 정보 취득
+
+**노드객체에 대한 정보 취득시 아래 표에 있는 노드 정보 프로퍼티를 사용**
+
+| 프로퍼티 | 설명                             |
+| -------- | -------------------------------- |
+| nodeType | 노드 타입을 나타내는 상수를 반환 |
+| nodeName | 노드이름을 문자열로 반환         |
+
+→ 요소노드 : 대문자열로 태그이름 반환 (”UL”, “LI”)
+→ 텍스트노드 : 문자열 “#text” 반환
+→ 문서노드 : 문자열 “#document”를 반환 |
+
+## 요소 노드의 텍스트 조작
+
+### nodeValue
+
+**nodeValue 프로퍼티는 이전과 달리 참조와 할당이 모두 가능하다**
+
+- 노드 객체의 `nodeValue` 프로퍼티 참조시 노드 객체의 값을 반환
+  - 텍스트 노드의 텍스트를 반환한다는 의미
+  - 텍스트노드가 아닌 노드의 `nodeValue` 프로퍼티 참조 시 `null`을 반환
+- 그냥 쓸일없다
+
+### textContent
+
+**textContent**
+
+- getter/setter 둘다 존재
+  - 요소노드의 텍스트와 모든 자손 노드의 텍스트를 모두 취득하거나 변경가능-
+    - 즉 참조시 부모 태그내에 있는 태그들을 무시하고 전부참조한다
+
+```tsx
+<div id="foo">
+  Hello
+  <span>World</span>
+</div>;
+
+/* script */
+
+const foo =
+  docuemnt.getElementById(
+    "foo"
+  ) /* #foo 요소 노드의 텍스트를 모두 취득 / 이때 HTML 마크업은 무시 */ 
+  foo.textContent; // Hello World
+```
+
+## DOM 조작
+
+**DOM 조작이란?**
+
+- 새로운 노드를 생성해 DOM에 추가하거나 기존 노드를 삭제 또는 교체하는 것
+  - DOM 조작에의해 새로운 노드가 추가되거나 삭제시 리플로우와 리페인트가 발생
+
+### innerHTML
+
+**innerHTML**
+
+- 요소 노드의 HTML 마크업을 취득(get)하거나 변경(set)한다
+- 요소노드의 `innerHTML` 프로퍼티에 문자열 할당 시 요소 노드의 모든 자식 노드가 제거되고, 할당한 문자열에 포함되어 있는 HTML 마크업이 파싱되어 요소노드의 자식노드로 DOM에 반영
+
+```tsx
+<div id="foo">
+  Hello
+  <span>World</span>
+</div>;
+
+/* script */
+
+const foo =
+  docuemnt.getElementById(
+    "foo"
+  ) /* #foo 요소 노드의 텍스트를 모두 취득 / 이때 HTML 마크업은 무시 */ 
+  foo.innerHTML; // Hello <span>World!</span> World
+```
+
+**innerHTML 사용 시 HTML 마크업 문자열로 DOM 조작이 가능하다**
+
+```tsx
+<ul class="fruits">
+  <li class="apple">Apple</li>
+</ul>;
+
+/* script */
+
+const fruits = docuemnt.getElementByClassName("fruits");
+
+/* 노드 추가 */
+fruits.innerHTML += '<li class="banana">banana</li>';
+
+/* 노드 교체 */
+fruits.innerHTML = '<li class="orange">orange</li>';
+
+/* 노드 삭제 */
+fruits.innerHTML = "";
+```
+
+💡 **innerHTML의 문제점**
+
+**크로스 사이트 스크립팅 공격에 취약하다**
+
+- HTML 마크업 내부에 자바스크립트 악성 코드가 포함되어 있을 시 파싱과정에서 그대로 실행될 가능성이 있기 때문
+
+**문제점2**
+
+- 요소노드의 `innerHTML` 프로퍼티에 HTML 마크업 문자열을 할당하는 경우
+  - 요소 노드의 모든 자식 노드를 제거하고 할당한 HTML 문자열을 파싱해 DOM을 변경한다는것
+  - 아래코드에선 자식요소 `li.banana`를 추가하고 있다
+  - 이때 `fruits`의 자식요소 `apple`은 아무런 변경이없으므로 다시 생성할 필요 또한 ❌
+  - 그러나 `innerHTML`은 내부 자식요소를 전부 삭제하기때문에 `+=`연산자로 다시 `apple`를 만들고 거기에 `banana`를 추가하는것이다
+  - 이는 효율적이지 ❌
+
+```tsx
+<ul class="fruits">
+  <li class="apple">Apple</li>
+</ul>;
+
+/* script */
+
+const fruits = docuemnt.getElementByClassName("fruits");
+fruits.innerHTML += '<li class="banana">banana</li>';
+```
+
+**문제점3**
+
+- 새로운 요소 삽입시 삽입될 위치를 지정할 수 없다
+- 아래코드와 li.apple과 li.orange 사이에 노드를 삽입하고 싶지만 `innerHTML`은 할 수 ❌
+- 이를 해결하기 위해 **insertAdjacentHTML 메서드 존재**
+
+```tsx
+<ul class="fruits">
+  <li class="apple">Apple</li>
+  /* innerHTML은 중간에 삽입 ❌ */
+  <li class="orange">orange</li>
+</ul>
+```
+
+### insertAdjacentHTML 메서드
+
+**insertAdjacentHTML(postion,DOMstring)**
+
+- 기존 요소를 제거하지 않으면서 위치를 지정해 새로운 요소를 삽입한다
+- 두번째 인수로 전달한 HTML 마크업 문자열을 파싱 후 그결과로 생성된 노드를 첫번째 인수로 전달할 위치에 삽입해 DOM에 반영
+- 첫번째 인수(postion)으로 전달할 수 있는 문자열은?
+  - ‘beforebegin’
+  - ‘afterbegin’
+  - ‘beforeend’
+  - ‘afterend’
+
+![***insertAdjacentHTML postion***](./../../assets/docs/39_DOM/image4.png)
+
+**_insertAdjacentHTML postion_**
+
+**단, insertAdjacentHTML 또한 크로스 사이트 스크립팅 공격에 취약하다는 점은 동일**
+
+### 노드 삽입
+
+**마지막노드로 추가**
+
+- **`appendChild`**
+  - 인수로 전달받은 노드를 자신을 호출한 노드의 마지막 자식노드로 DOM에 추가
+  - 이때 노드는 추가할 위치를 지정할 수 없으며 언제나 마지막 자식 노드로 추가
+
+```tsx
+<ul class="fruits">
+  <li class="apple">Apple</li>
+  <li class="orange">orange</li>
+</ul>;
+
+/* script */
+const li = document.createElement("li");
+
+li.appendChild(document.createTextNode("Orange"));
+
+/* li 요소 노드를 fruits 요소 노드의 마지막 자식으로 추가 */
+document.getElementById("fruits").appendChild(li);
+```
+
+**지정한 위치에 노드 삽입**
+
+- **`insertBefore(newNode, childNode)`**
+  - 첫번째 인수로 전달받은 노드를 두번째 인수로 전달받은 노드 앞에 삽입
+- 두번째 인수로 전달받은 노드는 반드시 `insertBofre` 메서드를 통해 호출한 노드의 자식노드 여야함
+  - 아니면 `DOMException` 에러 발생
+- 두번째 인수로 전달받은 노드가 `null`이라면, 첫번째 인수로 전달받은 노드를 `insertBefore` 메서드를 호출한 노드의 마지막 자식으로 추가
+  - 즉, `appendChild`와 동일하게 동작
+
+```tsx
+<ul class="fruits">
+	<li class="apple">Apple</li>
+	<li class="orange">orange</li>
+</ul>
+
+/* script */
+const fruits = document.getElementById('fruits')
+const li = document.createElement('li');
+li.appendChild(document.createTextNode('Orange'));
+
+/* li 요소 노드를 fruits 요소 노드의 마지막 자식요소 앞에 삽입 */
+fruits.inserBefore(li, fruits.lastElementChild)
+```
+
+### 노드 복사 (clone Node)
+
+**Node.prototype.cloneNode([deep:true | false])**
+
+- 노드의 사본을 생성해 반환
+  - 매개변수 `deep`에 `true`를 인수로 전달 시 노드를 깊은 복사
+  - 인수를 생략하거나 `false` 지정시 노드를 얕은 복사하여 노드 자신만의 사본을 생성
+    - 얕은 복사로 생성된 요소는 자손노드를 복사하지않으므로 텍스트 노드도 존재 ❌
+
+```tsx
+<ul class="fruits">
+  <li class="apple">Apple</li>
+  <li class="orange">orange</li>
+</ul>;
+
+/* script */
+const fruits = document.getElementById("fruits");
+const apple = fruits.firstElementsChild;
+
+/* apple노드를 얕은 복사해 사본을 생성, 텍스트 노드가 없는 사본이 생성됨 */
+const shallowClone = apple.cloneNode();
+
+/* fruits 노드를 깊은 복사해 사본을 생성 모든 자손노드가 포함되어 있음 */
+const deepClone = fruits.cloneNode(true);
+```
+
+### 노드 교체
+
+**Node.prototype.replaceChild(newChild, oldChild)**
+
+- 자신을 호출한 노드의 자식 노드를 다른 노드로 교체
+  - 첫번째 매개변수 `newChild`에 교체할 새로운 노드를 인수로 전달
+  - 두번째 매개변수 `oldChild`에는 이미 존재하는 교체될 노드를 인수로 전달
+    - `oldChild` 매개변수에 인수로 전달한 노드는 `replaceChild` 메서드를 호출한 노드의 자식 노드여야 한다
+
+```tsx
+<ul class="fruits">
+	<li class="apple">Apple</li>
+	<li class="orange">orange</li>
+</ul>
+
+/* script */
+const fruits = document.getElementById('fruits')
+
+const newChildNode = document.createElement('li')
+newChild.textContent = 'Bananan';
+
+/* fruits 요소 노드의 첫번째 자식 요소 노드를 newChild 요소 노드로 교체 */
+fruits.replaceChild(newChildNode, fruits.fristElementChild)
+```
+
+### 노드 삭제
+
+**Node.prototype.removeChild(child)**
+
+- 인수로 전달한 노드를 DOM에서 삭제
+  - 인수로 전달한 노드는 removeChild를 호출한 노드의 자식노드이어야 한다
+
+```tsx
+<ul class="fruits">
+	<li class="apple">Apple</li>
+	<li class="orange">orange</li>
+</ul>
+
+/* script */
+const fruits = document.getElementById('fruits')
+
+/* fruits 요소 노드의 마지막 요소를 DOM에서 삭제 */
+fruits.removeChild(fruits.lastElementChild)
+```
+
+## 어트리뷰트
+
+### 어트리뷰트 노드와 attributes 프로퍼티
+
+**HTML 문서 구성 요소인 HTML 요소는 여러개의 속성을 가질 수 있다**
+
+- HTML 어트리뷰트는 HTML 요소의 시작 태그에 어트리뷰트 이름=”어트리뷰트 값”형식으로 정의
+- 글로벌 어트리뷰트(`id`,`class`,`style`,`title`,`hidden` 등)과 이벤트 핸들러 어트리뷰트(`onClick`, `onChange`, `onfocus`) 은 모든 HTML 요소에서 공통적으로 사용가능 하지만
+  - 특정 HTML 요소에만 한정적으로 사용가능한 어트리뷰트도 존재
+- 모든 어트리뷰트 노드의 참조는 유사배열객체이자 이터러블인 `NamedNodeMap` 객체에 담겨져, 요소 노드의 `attributes`프로퍼티에 저장됨
+
+```tsx
+/* user의 어트리뷰트 */
+<input id="user" type="text" value="seju"></input>
+```
+
+**Element.prototype.attributes**
+
+- 요소노드의 모든 어트리뷰트 노드를 어트리뷰트 노드의 참조가 담긴 NamedNodeMap 객체를 반환 받는다
+
+```tsx
+<input id="user" type="text" value="seju"></input>
+
+/* script */
+
+const {attributes} = document.getElementById('user');
+
+/* NamedNodeMap {0 : id, 1 : type, 2: value, id: id, type: type, value : value, length :3}*/
+console.log(attributes)
+```
+
+### 어트리뷰트 조작
+
+**Element.prototype.getAttribute/setAttribute**
+
+- `attributes`프로퍼티를 통하지 않고 요소 노드에서직접 메서드를 통해 HTML 요소의 어트리뷰트 값을 취득하거나 변경할 수 있어 편리
+  - 참조 ➡️ `getAttribute`
+  - 변경 ➡️ `setAttribute`
+
+```tsx
+<input id="user" type="text" value="seju"></input>
+
+/* script */
+
+/* getAttribute를 통해 input의 value를 취득 */
+const input = document.getElementById('user')
+const inputValue = input.getAttribute('value'); // seju
+
+/* setAttribute를 통해 input 어트리뷰트를 변경 */
+input.setAttribute('value', '손흥민')
+console.log(input.getAttribute('value')) // 손흥민
+```
