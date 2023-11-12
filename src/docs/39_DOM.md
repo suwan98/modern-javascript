@@ -344,10 +344,10 @@ fruits.hasChildNodes() //true
   - 프로퍼티가 반환한 노드는 텍스트노드이거나 요소노드이다
 
 ```tsx
-<div id="foo">Hi</div> 
-  /* script */
+<div id="foo">Hi</div>;
+/* script */
 
-  docuemnt.getElementById("foo").firstChild; // Hi
+docuemnt.getElementById("foo").firstChild; // Hi
 ```
 
 ### 부모 노드 탐색
@@ -362,10 +362,9 @@ fruits.hasChildNodes() //true
 </ul>;
 
 /* script */
-const apple =
-  document.querySelector(".apple") 
-  /* li클래스의 부모노드는 ul이다*/
-  apple.parentNode; // ul number
+const apple = document.querySelector(".apple");
+/* li클래스의 부모노드는 ul이다*/
+apple.parentNode; // ul number
 ```
 
 ### 형제노드 탐색
@@ -432,8 +431,8 @@ const apple =
 const foo =
   docuemnt.getElementById(
     "foo"
-  ) /* #foo 요소 노드의 텍스트를 모두 취득 / 이때 HTML 마크업은 무시 */ 
-  foo.textContent; // Hello World
+  ); /* #foo 요소 노드의 텍스트를 모두 취득 / 이때 HTML 마크업은 무시 */
+foo.textContent; // Hello World
 ```
 
 ## DOM 조작
@@ -461,8 +460,8 @@ const foo =
 const foo =
   docuemnt.getElementById(
     "foo"
-  ) /* #foo 요소 노드의 텍스트를 모두 취득 / 이때 HTML 마크업은 무시 */ 
-  foo.innerHTML; // Hello <span>World!</span> World
+  ); /* #foo 요소 노드의 텍스트를 모두 취득 / 이때 HTML 마크업은 무시 */
+foo.innerHTML; // Hello <span>World!</span> World
 ```
 
 **innerHTML 사용 시 HTML 마크업 문자열로 DOM 조작이 가능하다**
@@ -578,17 +577,17 @@ document.getElementById("fruits").appendChild(li);
 
 ```tsx
 <ul class="fruits">
-	<li class="apple">Apple</li>
-	<li class="orange">orange</li>
-</ul>
+  <li class="apple">Apple</li>
+  <li class="orange">orange</li>
+</ul>;
 
 /* script */
-const fruits = document.getElementById('fruits')
-const li = document.createElement('li');
-li.appendChild(document.createTextNode('Orange'));
+const fruits = document.getElementById("fruits");
+const li = document.createElement("li");
+li.appendChild(document.createTextNode("Orange"));
 
 /* li 요소 노드를 fruits 요소 노드의 마지막 자식요소 앞에 삽입 */
-fruits.inserBefore(li, fruits.lastElementChild)
+fruits.inserBefore(li, fruits.lastElementChild);
 ```
 
 ### 노드 복사 (clone Node)
@@ -628,18 +627,18 @@ const deepClone = fruits.cloneNode(true);
 
 ```tsx
 <ul class="fruits">
-	<li class="apple">Apple</li>
-	<li class="orange">orange</li>
-</ul>
+  <li class="apple">Apple</li>
+  <li class="orange">orange</li>
+</ul>;
 
 /* script */
-const fruits = document.getElementById('fruits')
+const fruits = document.getElementById("fruits");
 
-const newChildNode = document.createElement('li')
-newChild.textContent = 'Bananan';
+const newChildNode = document.createElement("li");
+newChild.textContent = "Bananan";
 
 /* fruits 요소 노드의 첫번째 자식 요소 노드를 newChild 요소 노드로 교체 */
-fruits.replaceChild(newChildNode, fruits.fristElementChild)
+fruits.replaceChild(newChildNode, fruits.fristElementChild);
 ```
 
 ### 노드 삭제
@@ -651,15 +650,15 @@ fruits.replaceChild(newChildNode, fruits.fristElementChild)
 
 ```tsx
 <ul class="fruits">
-	<li class="apple">Apple</li>
-	<li class="orange">orange</li>
-</ul>
+  <li class="apple">Apple</li>
+  <li class="orange">orange</li>
+</ul>;
 
 /* script */
-const fruits = document.getElementById('fruits')
+const fruits = document.getElementById("fruits");
 
 /* fruits 요소 노드의 마지막 요소를 DOM에서 삭제 */
-fruits.removeChild(fruits.lastElementChild)
+fruits.removeChild(fruits.lastElementChild);
 ```
 
 ## 어트리뷰트
@@ -683,14 +682,14 @@ fruits.removeChild(fruits.lastElementChild)
 - 요소노드의 모든 어트리뷰트 노드를 어트리뷰트 노드의 참조가 담긴 NamedNodeMap 객체를 반환 받는다
 
 ```tsx
-<input id="user" type="text" value="seju"></input>
+<input id="user" type="text" value="seju"></input>;
 
 /* script */
 
-const {attributes} = document.getElementById('user');
+const {attributes} = document.getElementById("user");
 
 /* NamedNodeMap {0 : id, 1 : type, 2: value, id: id, type: type, value : value, length :3}*/
-console.log(attributes)
+console.log(attributes);
 ```
 
 ### 어트리뷰트 조작
@@ -702,15 +701,397 @@ console.log(attributes)
   - 변경 ➡️ `setAttribute`
 
 ```tsx
-<input id="user" type="text" value="seju"></input>
+<input id="user" type="text" value="seju"></input>;
 
 /* script */
 
 /* getAttribute를 통해 input의 value를 취득 */
-const input = document.getElementById('user')
-const inputValue = input.getAttribute('value'); // seju
+const input = document.getElementById("user");
+const inputValue = input.getAttribute("value"); // seju
 
 /* setAttribute를 통해 input 어트리뷰트를 변경 */
-input.setAttribute('value', '손흥민')
-console.log(input.getAttribute('value')) // 손흥민
+input.setAttribute("value", "손흥민");
+console.log(input.getAttribute("value")); // 손흥민
+```
+
+### HTML 어트리뷰트 VS DOM 프로퍼티
+
+**요소 노드 객체에는 HTML 어트리뷰트에 대응하는 프로퍼티가 존재**
+
+- 이는 DOM 프로퍼티
+- HTML 어트리뷰트를 초기값으로 가진다
+- DOM 프로퍼티는 `setter`와 `getter` 모두 존재하는 접근자 프로퍼티
+  - 따라서 DOM 프로퍼티는 참조와 변경이 가능하다
+
+```tsx
+<input id="user" type="text" value="seju"></input>;
+
+/* script */
+
+// 요소 노드의 value의 프로퍼티 값을 변경 (set)
+input.value = "foo";
+
+// 요소 노드의 value 프로퍼티 값을 참조 (get)
+console.log(input.value); // foo
+```
+
+**이처럼 HTML 어트리뷰트는 DOM에서중복관리되고 있는것처럼 보일 수 있다**
+
+1. 요소 노드의 `attributes` 프로퍼티에서 관리하는 어트리뷰트 노드
+2. HTML 어티르뷰트에 대응하는 요소노드의 프로퍼티(DOM 프로퍼티)
+
+> 💡 **HTML 어트리뷰트는 DOM에서 중복관리되고 있을까?**
+
+**정답은 ❌**
+
+- HTML 어트리뷰트의 역할은 ➡️ HTML 요소의 초기 상태 지정
+  - **HTML 어트리뷰트의 값**은 **초기상태를 의미**하며 이는 **변하지 않는다**
+
+**그러나 최초렌더링 이후 사용자가 요소에 무언가를 입력하면 상황이 달라진다**
+
+- **요소노드**는 **상태**를 가지고 있다
+  - 예를 들어 input 요소노드는 사용자가 입력한 값을 상태로 가지고 있으며
+  - checkbox 요소노드는 사용자가 입력 필드에 체크한 여부를 상태로 가지고 있다
+  - 사용자 입력에 의해 변화하는, 살아있는것이라는 의미이다
+
+**요소노드는 2개의 상태(초기상태, 최신상태)를 관리하고 있어야한다**
+
+- 요소노드의 **초기상태**는 **어트리뷰트 노드**가 **관리**
+- 요소노드의 **최신상태**는 **DOM 프로퍼티**가 **관리**
+
+**어트리뷰트 노드**
+
+- HTML 어트리뷰트로 지정한 HTML 요소의 초기상태는 어트리뷰트 노드에서 관리
+  - 어트리뷰트 값은 사용자 입력에 의해 상태가 변경되어도 HTML 어트리뷰트로 지정한 HTML 요소의 초기 상태를 그대로 유지
+  - 초기 상태값을 `get`/`set` 하려면 `getAttribute`/`setAttribute` 메서드를 사용
+  - HTML 요소에 지정한 어트리뷰트 값은 사용자 입력에 의해 변하지 않으므로 결과는 항상동일
+
+```tsx
+/* attritubets 프로퍼티에 지정한 value 어트리뷰트 값을 get한다 결과는 항상 동일 */
+document.getElementById("user").getAttribute("value");
+```
+
+**DOM 프로퍼티**
+
+- 사용자가 입력한 최신상태는 DOM 프로퍼티가 관리
+  - 사용자의 입력에 의한 상태변화에 반응해 언제나 최신상태를 유지
+- DOM 프로퍼티에 값을 할당하는 행위는 HTML 요소의 최신 상태값을 변경하는것과 동일
+  - 사용자가 상태를 변경하는 행위와 같다
+  - HTML 요소에 지정한 어트리뷰트 값에는 어떠한 영향도 주지 않는다
+
+```tsx
+<input id="user" type="text" value="seju"></input>;
+
+const input = document.getElementById("user");
+
+/* DOM 프로퍼티에 값을 할당해 HTML 요소의 최신 상태를 변경*/
+input.value = "seju2";
+console.log(input); // seju2
+
+/* 초기 상태 값은 변하지않고 유지된다 */
+console.log(input.getAttributes("value")); // seju
+```
+
+**사용자 입력에 의한 상태변화와 관계있는 DOM 프로퍼티만 최신 상태값을 관리**
+
+- 그외 사용자 입력에 의한 상태변화와 관계없는 dOM 프로퍼티는 항상 동일한값과 매칭
+  - 예시
+    - id 어트리뷰트에 대응하는 id 프로퍼티는 사용자 입력과 아무런 관계가 없으므로 항상 동일한 값이 유지된다
+
+**HTML 어트리뷰트와 DOM 프로퍼티의 대응관계**
+
+- HTML 어트리뷰트와 DOM 프로퍼티가 언제나 1:1로 대응하는것은 ❌
+- HTML 어트리뷰트들과 DOM 프로퍼티키가 반드시 일치하는 것도 ❌
+- 예시
+  - `id` 어트리뷰트와 `id` 프로퍼티는 대응하며 1:!로 동일한 값으로 연동
+  - `input` 요소의 `value` 어트리뷰트는 `value` 프로퍼티와 1:1로 대응
+    - 그러나 `value` 어트리뷰트는 초기상태를 `value` 프로퍼티는 최신상태를 가짐
+  - `class` 어트리뷰트는 `className`, `classList` 프로퍼티와 대응
+  - `for` 어트리뷰트는 `htmlFor` 프로퍼티와 1:1로 대응
+  - `td`요소의 `colspan` 어트리뷰트는 대응하는 프로퍼티가 존재 ❌
+  - `textContent` 프로퍼티는 대응하는 어트리뷰트가 존재 ❌
+
+**DOM 프로퍼티 값의 타입**
+
+- `getAttribute` 메서드로 취득한 **어트리뷰트 값**은 **언제나 문자열**
+  - 그러나 **DOM 프로퍼티도 취득한 최신 상태값**은 **문자열이 아닐 수도 있다**
+  - 예시로 `checkbox`요소의 `checked` 어트리뷰트의 값은 문자열이지만 `checked` 프로퍼티 값은 불리언이다
+
+```tsx
+<input type='checkbox' checked>
+
+/* script */
+
+const checkbox = docuemnt.querySelector('input[type=checked]')
+
+/* getAttribute 메서드로 취득한 어트리뷰트 값은 항상 문자열 */
+console.log(checkbox.getAttribute('cheked')) // ' '
+
+/* DOM 프로퍼티로 취득한 최신 상태값은 문자열이 아닐 수도 있따 */
+console.log(checkbox.checked) // true
+```
+
+### data 어트리뷰트와 dataset 프로퍼티
+
+**data 어트리뷰트 및 dataset 프로퍼티 사용 시 HTML 요소에 정의한 사용자 정의 어트리뷰트와 자바스크립트 간에 데이터를 교환할 수 있다**
+
+- `data-` 접두사를 사용해야함
+
+```tsx
+<li id="1" data-user-id="7768" data-role="admin">
+  Seju
+</li>
+```
+
+**data 어트리뷰트 값의 취득은?**
+
+- `HTMLElement.dataset` 프로퍼티로 취득 가능
+- `dataset` 프로퍼티는 HTML 요소의 모든 `data` 어트리뷰트의 정보를 제공하는 `DOMStringmap` 객체를 반환
+  - 해당 객체는 `data` 어트리뷰트의 `data-` 접두사 다음에 붙인 임의의 이름을 **카멜케이스**로 변환한 프로퍼티를 가지고 있다
+  - 이 프로퍼티로 `data` 어트리뷰트의 값을 취득/변경 가능하다
+
+```tsx
+<li id="1" data-user-id="7768" data-role="admin">
+  Seju
+</li>;
+
+const user = document.getElementById("1");
+
+/* user의 role 어트리뷰트 값을 취득 */
+console.log(user.dataset.role); // admin
+
+/* user의 role의 어트리뷰트 값을 변경 */
+user.dataset.rolte = "subscriber";
+```
+
+## 스타일
+
+### 인라인 스타일 조작
+
+**HTMLElement.prototype.style 프로퍼티**
+
+- `setter/getter` 모두 존재하는 접근자 프로퍼티
+- 요소노드의 인라인 스타일을 취득하거나 조작한다
+
+```tsx
+<div stype="color : red">Hello World</div>;
+
+const div = document.querySelector("div");
+
+/* 인라인 스타일 get */
+console.log(div.style); // CSSStyleDeclartation {0 : "color", ...}
+
+/* 인라인 스타일 변경 */
+div.style.color = "blue";
+
+/* 인라인 스타일 추가 */
+div.style.width = "120px";
+div.style.height = "100px";
+```
+
+**style 프로퍼티 참조 시 CSSStyleDelecaration 타입의 객체를 반환**
+
+- 다양한 CSS 프로퍼티에 대응하는 프로퍼티를 가지고 있다
+- 해당 프로퍼티에 값 할당 시 해당 CSS 프로퍼티가 인라인 스타일로 HTML 요소에 추가되거나 변경된다
+- CSS 프로퍼티는 케밥케이스를 따른다
+  - 이에 대응하는 `CSSStyleDelecaration` 객체 프로퍼티는 카멜케이스를 따른다
+
+**케밥 케이스의 CSS 프로퍼티를 그대로 사용하려면 대괄호 표기법을 사용**
+
+```tsx
+div.style["background-color"] = "yellow";
+```
+
+**단위 지정이 필요한 CSS 프로퍼티 값은 반드시 단위를 지정해야한다**
+
+- 단위 생략시 해당 CSS 프로퍼티는 적용 ❌
+
+```tsx
+div.style.witdh = "100px";
+```
+
+### 클래스 조작
+
+**클래스 조작 방법**
+
+- `.`으로 시작하는 클래스 선택를 사용해 CSS Class 정의 후 class 어트리뷰트 값을 변경해 HTML 요소의 스타일을 변경할 수 있다
+  - 단, `class` 어트리뷰트에 대응하는 DOM 프로퍼티는 `class`가 아닌 `className`과 `classList`
+  - `Javascript`에서 `class`는 예약어기 때문
+
+**className**
+
+- `setter/getter` 모두 존재하는 접근자 프로퍼티
+- HTML 요소의 `class` 어트리뷰트 값을 취득/변경한다
+- 요소노드의 `className` 프로퍼티 참조시 값을 문자열로 반환하고 요소노드의 `className` 프로퍼티 문자열 할당 시 어트리뷰트 값을 할당한 문자열로 변경한다
+- `className` 프로퍼티는 문자열을 반환하므로 공백으로 구분된 여러개의 클래스를 반환하는 경우 다루기가 불편하다
+
+```tsx
+<style>
+	.box {width : 100px; height : 100px};
+	.red {color :red};
+	.blue {color : blue};
+</style>
+
+<div class="box red">Hellow</div>
+
+/* script */
+
+const box = document.querySelector('.box');
+
+/* box 요소의 class 어트리뷰트 값을 취득 */
+console.log(box.className) // 'box red'
+
+/* box 요소의 class 어트리뷰트 값 중에서 'red'만 'blue'로 변경 */
+box.className = box.className.replace('red','blue')
+```
+
+**classList**
+
+- `class` 어트리뷰트 정보를 담은 `DOMTokenList` 객체를 반환
+
+```tsx
+<style>
+	.box {width : 100px; height : 100px};
+	.red {color :red};
+	.blue {color : blue};
+</style>
+
+<div class="box red">Hellow</div>
+
+/* script */
+
+const box = document.querySelector('.box');
+
+/* .box 요소의 class 어트리뷰트 정보를 담은 DOMTokenList 객체 취득*/
+/* 노드 객체의 상태변화를 실시간으로 반영하는 살아있는 객체 */
+/* DOMTokenList(2) [length : 2, value : 'box blue', 0 : 'box' , 1: 'red' */
+console.log(box.classList)
+
+```
+
+<aside>
+💡 **DOMTokenList**
+
+</aside>
+
+- class 어트리뷰트의 정보를 나타내는 컬렉션 객체
+- 유사배열 객체이면서 이터러블
+- DOMTokenList는 다음과 같은 메서드를 제공
+
+**add(…className)**
+
+- `add` 메서드는 인수로 전달한 1개 이상의 문자열을 `class` 어트리뷰트의 값으로 추가
+
+```tsx
+box.classList.add("foo");
+box.classList.add("bar", "baz"); // class ="box red foo bar baz"
+```
+
+**remove(className)**
+
+- 인수로 전달한 1개이상의 문자열과 일치하는 클래스를 `class` 어트리뷰트에서 삭제
+  - 인수로 전달한 문자열과 일치하는 클래스가 `class` 어트리뷰트에 없을 시 에러 없이 무시
+
+```tsx
+box.classList.remove('foo') -> // class='box red bar baz'
+```
+
+**item(index)**
+
+- 인수로 전달한 `index`에 해당하는 클래스를 `class` 어트리뷰트에서 반환
+
+```tsx
+box.classList.item(0); // 'box'
+box.classList.item(1); // 'red'
+```
+
+**contains(className)**
+
+- 인수로 전달한 문자열과 일치하는지의 유무를 불리언으로 반환
+
+```tsx
+box.classList.contains("box"); // true
+box.classList.containts("asdfas"); // false
+```
+
+**replace(oldClassName, newClassName)**
+
+- 인수로 첫번째 전달한 문자열을 두번째 인수로 전달한 문자열로 교체
+
+```tsx
+box.classList.replace("red", "blue"); // -> class="box blue"
+```
+
+**toggle**
+
+- `class` 어트리뷰트에 인수로 전달한 문자열과 일치하는 클래스가 존재하면 제거, 존재하지 않으면 추가
+
+```tsx
+box.classList.toggle("손흥민"); // -> class="box blux 손흥민"
+box.classList.toggle("손흥민"); // -> class="box blux"
+```
+
+### 요소의 적용되어 있는 CSS 스타일에 대한 참조
+
+**style 프로퍼티는 인라인 스타일만 반환**
+
+- 따라서 클래스로 적용한 스타일이나 상속을 통해 암묵적으로 적용된 스타일은 `style` 프로퍼티로 참조 ❌
+- HTML 요소에 적용되어 있는 모든 CSS 스타일을 참조하려면 `getComputedStyle` 메서드를 사용해야 한다
+
+**getComputedStyle**
+
+- 첫번째 인수로 전달한 요소 노드에 적용되어 있는 평가된 스타일을 `CSSStyleDeclartion` 객체에 담아 반환
+  - 평가된 스타일이란?
+    - 요소 노드에 적용되어 있는 모든 스타일이 조합되어 최종적으로 적용된 스타일
+
+```tsx
+<style>
+	body {
+		color : red;
+	}
+
+	.box {
+		width : 100px;
+		height : 100px;
+		background-color : cornsilk;
+		border : 1px solid black;
+	}
+</style>
+
+<div class='box'>Box</div>
+
+/* script */
+const box = document.querySelector('.box');
+
+/* box 요소에 적용된 모든 CSS 스타일을 담고 있는 CSSStyleDeclartion 객체 취득 */
+const computedStyle = window.getComputedStyle(box);
+
+console.log(computedStyle.width) // 100px;
+
+/* 상속 받은 스타일도 취득가능하다*/
+console.log(computedStyle.color) // red(255,0,0)
+```
+
+**getComputedStyle 메서드의 두번째 인수**
+
+- `:after`, `:before`과 같은 가상요소를 지정하는 문자열을 전달할 수 있다
+- 가상요소가 아닌 일반 요소의 경우 두번째 인수는 생략
+
+```tsx
+<style>
+	.box:before {
+		content : 'Hello'
+	}
+</style>
+
+<div class='box'>Box</div>
+
+/* script */
+const box = document.querySelector('.box');
+
+/* box 요소에 적용된 모든 CSS 스타일을 담고 있는 CSSStyleDeclartion 객체 취득 */
+const computedStyle = window.getComputedStyle(box);
+
+/* :before의 스타일 취득 */
+console.log(computedStyle.content) // 'Hello'
 ```
