@@ -1,0 +1,4 @@
+.fruits .active {
+  color: red;
+  text-decoration: underline;
+}

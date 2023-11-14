@@ -64,7 +64,7 @@
 - [37장 : Set과 Map]
 - [38장 : 브라우저 렌더링 과정](./src/docs/38_browser_rendering.md)
 - [39장 : DOM](./src/docs/39_DOM.md)
-- [40장 : 이벤트]
+- [40장 : 이벤트](./src/40_event.js)
 - [41장 : 타이머]
 - [42장 : 비동기 프로그래밍]
 - [43장 : Ajax]
@@ -87,6 +87,7 @@
 - `모던자바스크립트 DeppDive 36장` : [구조분해할당](./src/docs/36_destructuring.md)
 - `모던자바스크립트 DeppDive 38장` : [브라우저의 렌더링 과정](./src/docs/38_browser_rendering.md)
 - `모던자바스크립트 DeppDive 39장` : [DOM](./src/docs/39_DOM.md)
+- `모던자바스크립트 DeppDive 40장` : [event](./src/docs/40_event.md)
 
 <br />
 <br />
@@ -136,7 +137,7 @@
 | [37장: Set 및 Map]                                                   | 아직 시작하지 않음      |
 | [38장: 브라우저 렌더링 프로세스](./src/docs/38_browser_rendering.md) | 2023-11-06 (월) 학습 ✅ |
 | [39장: DOM](./src/docs/39_DOM.md)                                    | 2023-11-07 (화) 학습 ✅ |
-| [40장: 이벤트]                                                       | 아직 시작하지 않음      |
+| [40장: 이벤트](./src/docs/40_event.md)                               | 2023-11-14 (화) 학습 ✅ |
 | [41장: 타이머]                                                       | 아직 시작하지 않음      |
 | [42장: 비동기 프로그래밍]                                            | 아직 시작하지 않음      |
 | [43장: Ajax]                                                         | 아직 시작하지 않음      |
