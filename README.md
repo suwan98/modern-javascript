@@ -36,7 +36,7 @@
 - [10장 : 객체 리터럴](./src/docs/10_object.md)
 - [11장 : 원시 값과 객체의 비교](./src/docs/11_primitiveValueObject.md)
 - [12장 : 함수](./src/docs/12_function.md)
-- [13장 : 스코프]
+- [13장 : 스코프](./src/docs/13_scope.md)
 - [14장 : 전역변수의 문제점]
 - [15장 : let,const 키워드와 블록 레벨 스코프](./src/15_var.js)
 - [16장 : 프로퍼티 어트리뷰트](./src/16_property_attr.js)
@@ -82,6 +82,7 @@
 **정리가 필요한 중요한 개념들은 따로 문서를 정리해 기술**
 
 - `모던자바스크립트 DeepDive 12장` : [함수](./src/docs/12_function.md)
+- `모던자바스크립트 DeepDive 13장` : [스코프](./src/docs/13_scope.md.md)
 - `모던자바스크립트 DeepDive 24장` : [클로저](./src/docs/24_closure.md)
 - `모던자바스크립트 DeppDive 35장` : [스프레드 문법](./src/docs/35_spread_syntax.md)
 - `모던자바스크립트 DeppDive 36장` : [구조분해할당](./src/docs/36_destructuring.md)
