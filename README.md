@@ -65,7 +65,7 @@
 - [38장 : 브라우저 렌더링 과정](./src/docs/38_browser_rendering.md)
 - [39장 : DOM](./src/docs/39_DOM.md)
 - [40장 : 이벤트](./src/40_event.js)
-- [41장 : 타이머]
+- [41장 : 타이머](./src/41_timer.js)
 - [42장 : 비동기 프로그래밍]
 - [43장 : Ajax]
 - [44장 : REST API]
@@ -80,7 +80,7 @@
 
 ## 💯 주요 개념 정리 문서
 
-**정리가 필요한 중요한 장들은 따로 문서를 정리해 기술**
+**정리가 필요한 중요한 개념들은 따로 문서를 정리해 기술**
 
 - `모던자바스크립트 DeepDive 24장` : [클로저](./src/docs/24_closure.md)
 - `모던자바스크립트 DeppDive 35장` : [스프레드 문법](./src/docs/35_spread_syntax.md)
@@ -88,6 +88,7 @@
 - `모던자바스크립트 DeppDive 38장` : [브라우저의 렌더링 과정](./src/docs/38_browser_rendering.md)
 - `모던자바스크립트 DeppDive 39장` : [DOM](./src/docs/39_DOM.md)
 - `모던자바스크립트 DeppDive 40장` : [event](./src/docs/40_event.md)
+- `모던자바스크립트 DeepDive 41장` : [Debounce/Throttle](./src/docs/41_timer.md)
 
 <br />
 <br />
@@ -138,7 +139,7 @@
 | [38장: 브라우저 렌더링 프로세스](./src/docs/38_browser_rendering.md) | 2023-11-06 (월) 학습 ✅ |
 | [39장: DOM](./src/docs/39_DOM.md)                                    | 2023-11-07 (화) 학습 ✅ |
 | [40장: 이벤트](./src/docs/40_event.md)                               | 2023-11-14 (화) 학습 ✅ |
-| [41장: 타이머]                                                       | 아직 시작하지 않음      |
+| [41장: 타이머](./src/41_timer.js)                                    | 2023-11-15 (수) 학습 ✅ |
 | [42장: 비동기 프로그래밍]                                            | 아직 시작하지 않음      |
 | [43장: Ajax]                                                         | 아직 시작하지 않음      |
 | [44장: REST API]                                                     | 아직 시작하지 않음      |

@@ -2,3 +2,15 @@
   color: red;
   text-decoration: underline;
 }
+
+.throttleContainer {
+  width: 300px;
+  height: 300px;
+  background-color: rebeccapurple;
+  overflow: scroll;
+}
+
+.content {
+  width: 300px;
+  height: 1000vh;
+}
