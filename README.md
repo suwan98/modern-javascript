@@ -37,7 +37,7 @@
 - [11장 : 원시 값과 객체의 비교](./src/docs/11_primitiveValueObject.md)
 - [12장 : 함수](./src/docs/12_function.md)
 - [13장 : 스코프](./src/docs/13_scope.md)
-- [14장 : 전역변수의 문제점]
+- [14장 : 전역변수의 문제점](./src/14.global_variable_problem.js)
 - [15장 : let,const 키워드와 블록 레벨 스코프](./src/15_var.js)
 - [16장 : 프로퍼티 어트리뷰트](./src/16_property_attr.js)
 - [17장 : 생성자 함수에 의한 객체 생성](./src/17_constructor_function.js)
@@ -113,7 +113,7 @@
 | [11장: 원시 값과 객체의 비교](./src/docs/11_primitiveValueObject.md) | 2023-10-11 (수) 학습 ✅ |
 | [12장: 함수](./src/docs/12_function.md)                              | 2023-10-12 (목) 학습 ✅ |
 | [13장: 스코프](./src/docs/13_scope.md)                               | 2023-10-13 (금) 학습 ✅ |
-| [14장: 전역 변수의 문제](./src/docs/14_global_variable_problem)      | 2023-10-13 (금) 학습 ✅ |
+| [14장: 전역 변수의 문제점](./src/docs/14_global_variable_problem.md) | 2023-10-13 (금) 학습 ✅ |
 | [15장: let, const 키워드 및 블록 레벨 스코프](./src/15_var.js)       | 2023-10-13 (금) 학습 ✅ |
 | [16장: 프로퍼티 속성](./src/16_property_attr.js)                     | 2023-10-14 (토) 학습 ✅ |
 | [17장: 생성자 함수로 객체 생성](./src/17_constructor_function.js)    | 2023-10-16 (월) 학습 ✅ |
