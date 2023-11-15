@@ -31,7 +31,7 @@
 - [5장 : 표현식과 문](./src/docs/5_expression_statement.md)
 - [6장 : 데이터타입](./src/docs/6_data_type.md)
 - [7장 : 연산자](./src/docs/7_operator.md)
-- [8장 : 제어문]
+- [8장 : 제어문](./src/docs/8_control_flow_statement.md)
 - [9장 : 타입 변환과 단축평가]
 - [10장 : 객체 리터럴]
 - [11장 : 원시 값과 객체의 비교]
@@ -105,7 +105,7 @@
 | [5장: 표현식과 문](./src/docs/5_expression_statement.md)             | 2023-10-04 (토) 학습 ✅ |
 | [6장: 데이터 타입](./src/docs/6_data_type.md)                        | 2023-10-05 (일) 학습 ✅ |
 | [7장: 연산자](./src/docs/7_operator.md)                              | 2023-10-06 (월) 학습 ✅ |
-| [8장: 제어문]                                                        | 아직 시작하지 않음      |
+| [8장: 제어문](./src/docs/8_control_flow_statement.md)                | 2023-10-07 (화) 학습 ✅ |
 | [9장: 형 변환 및 단축 평가]                                          | 아직 시작하지 않음      |
 | [10장: 객체 리터럴]                                                  | 아직 시작하지 않음      |
 | [11장: 기본 값과 객체의 비교]                                        | 아직 시작하지 않음      |
