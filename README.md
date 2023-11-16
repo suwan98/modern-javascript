@@ -67,7 +67,7 @@
 | 39장 | [DOM](./src/docs/39_DOM.md)                                                            |
 | 40장 | [이벤트](./src/40_event.js)                                                            |
 | 41장 | [타이머](./src/41_timer.js)                                                            |
-| 42장 | 비동기 프로그래밍                                                                      |
+| 42장 | [비동기 프로그래밍](./src/42_asynchronous.js)                                          |
 | 43장 | Ajax                                                                                   |
 | 44장 | REST API                                                                               |
 | 45장 | 프로미스                                                                               |
@@ -92,6 +92,7 @@
 - `모던자바스크립트 DeppDive 39장` : [DOM](./src/docs/39_DOM.md)
 - `모던자바스크립트 DeppDive 40장` : [event](./src/docs/40_event.md)
 - `모던자바스크립트 DeepDive 41장` : [Debounce/Throttle](./src/docs/41_timer.md)
+- `모던자바스크립트 DeepDive 42장` : [비동기 프로그래밍](./src/docs/42_asynchronous.md)
 
 <br />
 <br />
@@ -143,7 +144,7 @@
 | [39장: DOM](./src/docs/39_DOM.md)                                    | 2023-11-07 (화) 학습 ✅ |
 | [40장: 이벤트](./src/docs/40_event.md)                               | 2023-11-14 (화) 학습 ✅ |
 | [41장: 타이머](./src/41_timer.js)                                    | 2023-11-15 (수) 학습 ✅ |
-| [42장: 비동기 프로그래밍]                                            | 아직 시작하지 않음      |
+| [42장: 비동기 프로그래밍](./src/42_asynchronous.js)                  | 2023-11-16 (목) 학습 ✅ |
 | [43장: Ajax]                                                         | 아직 시작하지 않음      |
 | [44장: REST API]                                                     | 아직 시작하지 않음      |
 | [45장: 프로미스]                                                     | 아직 시작하지 않음      |
