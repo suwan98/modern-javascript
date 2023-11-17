@@ -93,7 +93,7 @@
 - `모던자바스크립트 DeppDive 40장` : [event](./src/docs/40_event.md)
 - `모던자바스크립트 DeepDive 41장` : [Debounce/Throttle](./src/docs/41_timer.md)
 - `모던자바스크립트 DeepDive 42장` : [비동기 프로그래밍](./src/docs/42_asynchronous.md)
-- `모던자바스크립트 DeepDive 44장` : [REST Api](./src/44_rest_api.js)
+- `모던자바스크립트 DeepDive 44장` : [REST Api](./src/docs/44_rest_api.md)
 
 <br />
 <br />
