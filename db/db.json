@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "content": "React",
+      "complted": true
+    },
+    {
+      "id": 2,
+      "content": "JavaScript",
+      "complted": true
+    },
+    {
+      "id": 3,
+      "content": "Nextjs",
+      "complted": false
+    },
+    {
+      "id": 5,
+      "content": "Nodejs",
+      "completed": false
+    }
+  ]
+}
