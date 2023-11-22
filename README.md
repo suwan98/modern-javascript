@@ -73,7 +73,7 @@
 | 45장 | [프로미스](./src/45_Promise.js)                                                        |
 | 46장 | [제네레이터와 async/await](./src/46_async_await.js)                                    |
 | 47장 | [에러 처리](./src/47_error.js)                                                         |
-| 48장 | 모듈                                                                                   |
+| 48장 | [모듈](./src/docs/48_module.md)                                                        |
 | 49장 | [Bable과 Webpack을 이용한 ES6+/ES.NEXT 개발 환경 구축](./src/docs/49_Bable_Webpack.md) |
 
 <br />
@@ -96,6 +96,7 @@
 - `모던자바스크립트 DeepDive 44장` : [REST Api](./src/docs/44_rest_api.md)
 - `모던자바스크립트 DeepDive 45장` : [프로미스](./src/docs/45_Promise.md)
 - `모던자바스크립트 DeepDive 46장` : [async/await 정리](./src/docs/46_async_await.md)
+- `모던자바스크립트 DeepDive 46장` : [모듈](./src/docs/48_module.md)
 
 <br />
 <br />
@@ -152,6 +153,6 @@
 | [44장: REST API](./src/44_rest_api.js)                               | 2023-11-17 (금) 학습 ✅ |
 | [45장: 프로미스](./src/45_Promise.js)                                | 2023-11-18 (토) 학습 ✅ |
 | [46장: 제너레이터와 async/await](./src/46_async_await.js)            | 2023-11-20 (월) 학습 ✅ |
-| [47장: 에러 처리]                                                    | 2023-11-21 (화) 학습 ✅ |
-| [48장: 모듈]                                                         | 아직 시작하지 않음      |
+| [47장: 에러 처리](./src/47_error.js)                                 | 2023-11-21 (화) 학습 ✅ |
+| [48장: 모듈](./src/docs/48_module.md)                                | 2023-11-22 (수) 학습 ✅ |
 | [49장: Babel 및 Webpack을 사용한 ES6+/ES.NEXT 개발 환경 구축]        | 아직 시작하지 않음      |
