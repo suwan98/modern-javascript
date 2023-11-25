@@ -59,7 +59,7 @@
 | 31장 | [RegExp](./src/31_regExp.js)                                                           |
 | 32장 | [String](./src/32_String.js)                                                           |
 | 33장 | 7번째 데이터 타입 Symbol                                                               |
-| 34장 | 이터러블                                                                               |
+| 34장 | [이터러블](./src/34_iterable.js)                                                       |
 | 35장 | [스프레드 문법](./src/35_spread_syntax.js)                                             |
 | 36장 | [디스트럭처링 할당](./src/36_destructuring.js)                                         |
 | 37장 | Set과 Map                                                                              |
@@ -86,6 +86,7 @@
 - `모던자바스크립트 DeepDive 12장` : [함수](./src/docs/12_function.md)
 - `모던자바스크립트 DeepDive 13장` : [스코프](./src/docs/13_scope.md.md)
 - `모던자바스크립트 DeepDive 24장` : [클로저](./src/docs/24_closure.md)
+- `모던자바스크립트 DeepDive 34장` : [이터러블](./src/docs/34_iterable.md)
 - `모던자바스크립트 DeppDive 35장` : [스프레드 문법](./src/docs/35_spread_syntax.md)
 - `모던자바스크립트 DeppDive 36장` : [구조분해할당](./src/docs/36_destructuring.md)
 - `모던자바스크립트 DeppDive 38장` : [브라우저의 렌더링 과정](./src/docs/38_browser_rendering.md)
@@ -140,7 +141,7 @@
 | [31장: 정규 표현식](./src/31_regExp.js)                              | 2023-10-29 (일) 학습 ✅ |
 | [32장: String 빌트인 객체](./src/32_String.js)                       | 2023-11-01 (수) 학습 ✅ |
 | [33장: 7번째 데이터 유형 심볼]                                       | 아직 시작하지 않음      |
-| [34장: 이터러블]                                                     | 아직 시작하지 않음      |
+| [34장: 이터러블](./src/34_iterable.js)                               | 2023-11-25 (토) 학습 ✅ |
 | [35장: 스프레드 문법](./src/35_spread_syntax.js)                     | 2023-11-02 (목) 학습 ✅ |
 | [36장: 디스트럭처링 할당](./src/36_destructuring.js)                 | 2023-11-03 (금) 학습 ✅ |
 | [37장: Set 및 Map]                                                   | 아직 시작하지 않음      |
